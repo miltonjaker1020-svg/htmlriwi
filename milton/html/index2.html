@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Adivina el País</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f0f4f8;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        background: #5e391a;
+        color: white;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .game-container {
+        margin-top: 40px;
+    }
+
+    .image-box {
+        width: 300px;
+        height: 200px;
+        margin: 0 auto;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        border: 3px solid #333;
+    }
+
+    /* Cambia la imagen aquí */
+    .france {
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e6/Paris_Night.jpg');
+    }
+
+    .italia {
+        background-image: url('https://es.wikipedia.org/wiki/Italia#/media/Archivo:Colosseo_2020.jpg');
+    }
+
+    input {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 16px;
+        width: 200px;
+    }
+
+    button {    
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-left: 10px;
+        background: #28a745;
+        color: white;
+        border: 50px;
+        border-color: rgb(159, 37, 37);
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #882121;
+    }
+
+    .result {
+        margin-top: 202  px;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+</style>
+</head>
+<body>
+
+<h1>🌍 Adivina el País</h1>
+
+<div class="game-container">
+    <div class="image-box france"></div>
+
+    <div>
+        <input type="text" id="answer" placeholder="Escribe el país">
+        <button onclick="checkAnswer()">Adivinar</button>
+    </div>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    let pais=0;
+    
+    function checkAnswer() {
+        const userAnswer = document.getElementById("answer").value.toLowerCase();
+        const correctAnswer = "francia";
+        
+        const result = document.getElementById("result");
+
+        if (userAnswer === correctAnswer) {
+            
+
+            result.textContent = "✅ ¡Correcto!";
+            result.style.color = "green";
+            
+        } else {
+            result.textContent = "❌ Intenta de nuevo";
+            result.style.color = "red";
+        }
+    }
+
+    
+    const paises=[
+        { name: "francia",
+        class:"francia"
+        },
+
+        { name: "italia",
+        class:"italia"
+        }
+    ]
+
+
+</script>
+
+</body>
+</html>
+
