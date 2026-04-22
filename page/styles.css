@@ -1,0 +1,351 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{    
+    color:#ffffff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: #2300eb;
+    background: linear-gradient(90deg, rgba(35, 0, 235, 1) 0%, rgba(130, 0, 0, 1) 100%);
+    display: flex;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: space-between;
+    padding: 2rem;
+    
+}
+
+
+
+.historia{
+    height: 100vh;
+
+}
+header nav{
+    display: flex;  
+    gap: 600px;
+}
+header nav h1{
+    
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+nav img{
+    width: 4rem;
+    height: 4rem;
+    
+}
+
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 3.5rem ;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li a:hover{
+    color: yellow;
+    
+}
+nav ul li a{
+    text-decoration: none;
+    color: beige    ;
+}
+
+main section{
+    min-width: 100vh;
+}
+
+
+
+
+#history  div ul li{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    min-height: 100vh;
+    gap: 4rem;
+    padding: 1rem;
+    background: #440404;
+    
+    
+    
+}
+
+#history div ul li h2{
+    grid-column: 2;
+    grid-row: 1;
+    
+    
+    justify-self: center;
+    align-self: center;
+    
+    
+}
+
+.fotob{  
+    height: 200px;
+    width: 200px;
+    grid-column: 2;
+    grid-row: 3;
+    align-self: center;
+    justify-self: center;
+
+}
+
+.articulofoto{
+    grid-column: 2;
+    grid-row: 4;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+}
+
+.escudoh3{
+    grid-column: 2;
+    grid-row:2 ;
+    align-self: center;
+    justify-self: center;
+}
+
+.estadio{
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+}
+
+.fotoesta{
+    grid-column: 1;
+    grid-row: 3;
+    height: 200px;
+    width: 200px;
+    align-self: center;
+    justify-self: center;
+}
+
+.articuloestadio{
+    grid-column: 1;
+    grid-row: 4;
+    text-align: center ;
+    align-self: center;
+    justify-self: center;
+}
+
+
+.cataluña{
+    grid-column: 3;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+}
+
+
+.fotocata{
+    grid-column: 3;
+    grid-row: 3;
+    height: 200px;
+    width: 200px;
+    text-align: center ;
+    align-self: center;
+    justify-self: center;
+}
+
+.articulocataluña{
+    grid-column: 3;
+    grid-row: 4;
+    text-align: center ;
+    align-self: center;
+    justify-self: center;
+}
+
+#history div ul li img{
+    
+    width: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgb(7, 21, 173);
+    border-color: #9b2222;
+    transition: transform 0.2s, box-shadow 0.2s;
+    
+}
+#history div ul li h2{
+    color: bisque
+}
+#history div ul li h3{
+    color: beige;
+}
+
+
+#history div ul li article{
+    background-color: beige;
+    
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgb(168, 27, 27);
+    
+    transition: transform 0.2s, box-shadow 0.2s;
+
+
+}
+
+
+
+.titulos{
+    min-height: 100vh;
+}
+
+.titulos h2{
+    display: flex;
+    justify-content: center;
+    padding: 10rem;
+}
+.ul-titulos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  list-style: none;
+  padding: 100px;
+}
+
+.flip-card {
+  
+  width: 140px;
+  height: 140px;
+  cursor: pointer;
+  perspective: 800px;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  border-radius: 12px;
+}
+
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-front {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.flip-front img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.flip-back {
+  background: #a50044;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  transform: rotateY(180deg);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+
+
+.trofeos-toggle {
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 auto 20px;
+}
+
+/* Vista cerrada: solo el escudo recortado con el número */
+.trofeos-preview {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #a50044;
+  margin: 0 auto;
+  transition: opacity 0.3s;
+}
+
+.trofeos-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top; /* muestra la parte del escudo */
+}
+
+.trofeos-numero {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: #a50044;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+
+/* Vista abierta: imagen completa */
+.trofeos-full {
+  display: none;
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 2s ease;
+}
+
+.trofeos-full img {
+  width: 100%;
+  display: block;
+}
+
+/* Cuando está abierto */
+.trofeos-toggle.abierto .trofeos-preview {
+  display: none;
+}
+
+.trofeos-toggle.abierto .trofeos-full {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scaleY(0.95); }
+  to   { opacity: 1; transform: scaleY(1); }
+}
+
+.titulos article{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
