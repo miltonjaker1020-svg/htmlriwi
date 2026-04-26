@@ -1,0 +1,102 @@
+:root {
+    --primary-gold: #ffcc00;
+    --bg-dark: #0a0a0a;
+    --text-light: #f4f4f4;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+/* Header y Menú Hamburguesa */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: rgba(0,0,0,0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-toggle {
+    display: none; /* Oculto en desktop */
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-gold);
+    margin: 2px 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover { color: var(--primary-gold); }
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/hero-bg.jpg');
+    background-size: cover;
+}
+
+/* Grid de Zonas */
+.zones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 50px 5%;
+}
+
+.zone-card {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    border-bottom: 3px solid var(--primary-gold);
+}
+
+/* Responsivo: Mobile */
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+
+    nav {
+        display: none; /* Se activa con JS */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-dark);
+    }
+
+    nav.active { display: block; }
+
+    nav ul {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+}

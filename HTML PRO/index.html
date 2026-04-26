@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Gastronómico Nocturno</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">SABORES <span>de la Noche</span></div>
+            <!-- Botón Hamburguesa -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#sobre-nosotros">Sobre el Festival</a></li>
+                <li><a href="#zonas">Zonas</a></li>
+                <li><a href="#contacto" class="cta-nav">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section con Flexbox -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>UNA NOCHE. <br>MIL SABORES.</h1>
+                <p>Experiencias inolvidables bajo las estrellas.</p>
+                <a href="#eventos" class="btn-main">Conoce más</a>
+            </div>
+        </section>
+
+        <!-- Tabla de Eventos -->
+        <section id="eventos" class="section-container">
+            <h2>Próximas Fechas</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Ciudad</th>
+                            <th>Horario</th>
+                            <th>Atracción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12 May</td>
+                            <td>Barranquilla</td>
+                            <td>6:00 PM</td>
+                            <td>Street Food Show</td>
+                        </tr>
+                        <tr>
+                            <td>19 May</td>
+                            <td>Cartagena</td>
+                            <td>7:00 PM</td>
+                            <td>Live Cooking</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Zonas con Grid -->
+        <section id="zonas" class="section-container">
+            <h2>Zonas Temáticas</h2>
+            <div class="grid-zones">
+                <article class="card">
+                    <img src="https://placeholder.com" alt="Comida Local">
+                    <h3>Cocina Local</h3>
+                </article>
+                <article class="card">
+                    <img src="https://placeholder.com" alt="Postres">
+                    <h3>Postres y Dulces</h3>
+                </article>
+                <article class="card">
+                    <img src="https://placeholder.com" alt="Cocteles">
+                    <h3>Bebidas y Mixología</h3>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Festival Gastronómico Nocturno. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript Básico -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabores de la Noche – Festival Gastronómico Nocturno</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Google Fonts: Playfair Display + DM Sans -->
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===========================
+       HEADER & NAVEGACIÓN
+  ============================ -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <a href="#" class="header__logo">
+        🌙 <span>Sabores</span> de la Noche
+      </a>
+
+      <!-- Navegación desktop -->
+      <nav class="header__nav" id="nav">
+        <ul class="header__nav-list">
+          <li><a href="#fechas" class="nav-link">Fechas</a></li>
+          <li><a href="#sobre" class="nav-link">El Festival</a></li>
+          <li><a href="#zonas" class="nav-link">Zonas</a></li>
+          <li><a href="#galeria" class="nav-link">Galería</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA desktop -->
+      <a href="#fechas" class="btn btn--outline header__cta">Comprar entradas</a>
+
+      <!-- Botón hamburguesa (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===========================
+         HERO SECTION
+    ============================ -->
+    <section class="hero" id="inicio">
+      <!-- Partículas decorativas -->
+      <div class="hero__particles" id="particles"></div>
+
+      <article class="hero__content container">
+        <p class="hero__eyebrow reveal">✦ Colombia · Mayo 2025</p>
+        <h1 class="hero__title reveal">
+          Una Noche.<br />
+          <em>Mil Sabores.</em><br />
+          Experiencias<br />Inolvidables.
+        </h1>
+        <p class="hero__subtitle reveal">
+          El festival gastronómico nocturno que despierta tus sentidos.<br />
+          Gastronomía, música en vivo y cultura bajo las estrellas.
+        </p>
+
+        <!-- Countdown -->
+        <ul class="hero__countdown reveal" id="countdown">
+          <li class="countdown__item">
+            <span class="countdown__num" id="cd-days">00</span>
+            <span class="countdown__label">Días</span>
+          </li>
+          <li class="countdown__item">
+            <span class="countdown__num" id="cd-hours">00</span>
+            <span class="countdown__label">Horas</span>
+          </li>
+          <li class="countdown__item">
+            <span class="countdown__num" id="cd-mins">00</span>
+            <span class="countdown__label">Min</span>
+          </li>
+          <li class="countdown__item">
+            <span class="countdown__num" id="cd-secs">00</span>
+            <span class="countdown__label">Seg</span>
+          </li>
+        </ul>
+
+        <button class="hero__actions reveal">
+          <a href="#fechas" class="btn btn--primary">Conoce más ↓</a>
+          <a href="#galeria" class="btn btn--ghost">Ver galería</a>
+        </button>
+      </article>
+
+      <!-- Imagen decorativa flotante -->
+      <div class="hero__visual">
+        <div class="hero__glow"></div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         PRÓXIMAS FECHAS (tabla HTML)
+    ============================ -->
+    <section class="section fechas" id="fechas">
+      <article class="container">
+        <header class="section__header reveal">
+          <span class="section__tag">📅 Agenda</span>
+          <h2 class="section__title">Próximas Fechas</h2>
+          <p class="section__desc">Elige tu ciudad y vive la noche más deliciosa del año.</p>
+        </header>
+
+        <!-- Tabla HTML semántica -->
+        <div class="table-wrapper reveal">
+          <table class="festival-table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Ciudad</th>
+                <th>Lugar</th>
+                <th>Horario</th>
+                <th>Atracción Principal</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="date-badge">17 Mayo</span></td>
+                <td>Barranquilla</td>
+                <td>Plaza de la Paz</td>
+                <td>6:00 PM – 11:00 PM</td>
+                <td>🔥 Show de Fuego</td>
+                <td><a href="#" class="btn btn--sm btn--primary">Tickets</a></td>
+              </tr>
+              <tr>
+                <td><span class="date-badge">24 Mayo</span></td>
+                <td>Cartagena</td>
+                <td>Muelle de los Pegasos</td>
+                <td>5:00 PM – 11:00 PM</td>
+                <td>👨‍🍳 Chef Invitado</td>
+                <td><a href="#" class="btn btn--sm btn--primary">Tickets</a></td>
+              </tr>
+              <tr>
+                <td><span class="date-badge">31 Mayo</span></td>
+                <td>Santa Marta</td>
+                <td>Bahía Outdoor</td>
+                <td>6:00 PM – 12:00 AM</td>
+                <td>🎶 Música en Vivo</td>
+                <td><a href="#" class="btn btn--sm btn--primary">Tickets</a></td>
+              </tr>
+              <tr>
+                <td><span class="date-badge">7 Junio</span></td>
+                <td>Medellín</td>
+                <td>Parque El Poblado</td>
+                <td>5:30 PM – 11:30 PM</td>
+                <td>🍰 Concurso de Postres</td>
+                <td><a href="#" class="btn btn--sm btn--primary">Tickets</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===========================
+         SOBRE EL FESTIVAL
+    ============================ -->
+    <section class="section sobre" id="sobre">
+      <div class="container sobre__grid">
+        <!-- Texto -->
+        <article class="sobre__text reveal">
+          <span class="section__tag">✦ Nuestra esencia</span>
+          <h2 class="section__title">Sobre el Festival</h2>
+          <p>
+            <strong>Sabores de la Noche</strong> es el encuentro único donde la gastronomía,
+            la música y la cultura se unen para crear momentos inolvidables bajo las estrellas.
+            Desde 2019 recorremos Colombia llevando experiencias culinarias de clase mundial.
+          </p>
+          <p>
+            Más de <strong>80 chefs</strong>, <strong>200 platos</strong> y
+            <strong>40,000 asistentes</strong> han sido parte de esta celebración del sabor.
+          </p>
+
+          <!-- Lista semántica con experiencias -->
+          <h3>¿Qué encontrarás?</h3>
+          <ul class="experience-list">
+            <li>
+              <span class="list-icon">🍴</span>
+              <div>
+                <strong>Cocina de autor</strong>
+                <p>Chefs reconocidos presentando propuestas innovadoras y sorprendentes.</p>
+              </div>
+            </li>
+            <li>
+              <span class="list-icon">🍹</span>
+              <div>
+                <strong>Food trucks & bebidas</strong>
+                <p>Más de 40 stands con cocina local, internacional y cócteles artesanales.</p>
+              </div>
+            </li>
+            <li>
+              <span class="list-icon">🎵</span>
+              <div>
+                <strong>Música en vivo</strong>
+                <p>Bandas y DJs seleccionados para crear el ambiente perfecto.</p>
+              </div>
+            </li>
+            <li>
+              <span class="list-icon">🌙</span>
+              <div>
+                <strong>Ambiente único</strong>
+                <p>Iluminación nocturna, decoración temática y espacios para vivir la noche.</p>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Stats visuales -->
+        <div class="sobre__stats reveal">
+          <div class="stat-card">
+            <span class="stat-num" >80</span>
+            <span class="stat-plus">+</span>
+            <p>Chefs invitados</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">200</span>
+            <span class="stat-plus">+</span>
+            <p>Platos únicos</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" >4</span>
+            <span class="stat-plus"></span>
+            <p>Ciudades en 2025</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" >40</span>
+            <span class="stat-plus">K+</span>
+            <p>Asistentes anuales</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         ZONAS TEMÁTICAS (Grid + Flexbox)
+    ============================ -->
+    <section class="section zonas" id="zonas">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">🗺️ Explora</span>
+          <h2 class="section__title">Zonas Temáticas</h2>
+          <p class="section__desc">Cada zona es un mundo de sabores diferente. ¿Por cuál empiezas?</p>
+        </div>
+
+        <div class="zonas__grid">
+          <!-- Card 1 -->
+          <article class="zona-card reveal" style="--delay: 0s">
+            <div class="zona-card__icon">🌎</div>
+            <h3>Sabores del Mundo</h3>
+            <p>Cocina japonesa, italiana, mexicana, peruana y más. Un viaje sin salir de Colombia.</p>
+            <ul class="zona-card__tags">
+              <li>Sushi</li>
+              <li>Tacos</li>
+              <li>Pasta</li>
+              <li>Ceviche</li>
+            </ul>
+          </article>
+          <!-- Card 2 -->
+          <article class="zona-card reveal" style="--delay: 0.1s">
+            <div class="zona-card__icon">🫕</div>
+            <h3>Cocina Local</h3>
+            <p>Homenaje a la gastronomía colombiana con los mejores chefs regionales del país.</p>
+            <ul class="zona-card__tags">
+              <li>Bandeja paisa</li>
+              <li>Ajiaco</li>
+              <li>Sancocho</li>
+            </ul>
+          </article>
+          <!-- Card 3 -->
+          <article class="zona-card reveal" style="--delay: 0.2s">
+            <div class="zona-card__icon">🍰</div>
+            <h3>Postres & Dulces</h3>
+            <p>Una zona dedicada al pecado más delicioso: pasteles, helados, chocolates artesanales.</p>
+            <ul class="zona-card__tags">
+              <li>Cakes</li>
+              <li>Helados</li>
+              <li>Chocolates</li>
+            </ul>
+          </article>
+          <!-- Card 4 -->
+          <article class="zona-card reveal" style="--delay: 0.3s">
+            <div class="zona-card__icon">🍹</div>
+            <h3>Bebidas & Cócteles</h3>
+            <p>Bartenders internacionales, catas de vino, ron artesanal y jugos tropicales únicos.</p>
+            <ul class="zona-card__tags">
+              <li>Cócteles</li>
+              <li>Vinos</li>
+              <li>Ron</li>
+            </ul>
+          </article>
+          <!-- Card 5 -->
+          <article class="zona-card reveal" style="--delay: 0.4s">
+            <div class="zona-card__icon">🎸</div>
+            <h3>Música & Arte</h3>
+            <p>El escenario principal con bandas en vivo, instalaciones artísticas y murales en tiempo real.</p>
+            <ul class="zona-card__tags">
+              <li>Bandas</li>
+              <li>DJ Sets</li>
+              <li>Arte</li>
+            </ul>
+          </article>
+          <!-- Card 6 -->
+          <article class="zona-card reveal" style="--delay: 0.5s">
+            <div class="zona-card__icon">🔥</div>
+            <h3>Cocina en Vivo</h3>
+            <p>Observa cómo los chefs preparan sus platos. Clases magistrales y degustaciones exclusivas.</p>
+            <ul class="zona-card__tags">
+              <li>Masterclass</li>
+              <li>Demos</li>
+              <li>Tasting</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         GALERÍA (Grid + Lightbox JS)
+    ============================ -->
+    <section class="section galeria" id="galeria">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">📸 Galería</span>
+          <h2 class="section__title">La Atmósfera del Festival</h2>
+          <p class="section__desc">Una noche que no olvidarás. Mira lo que te espera.</p>
+        </div>
+
+        <!-- Grid galería - usa imágenes de colores con emojis como placeholders -->
+        <div class="galeria__grid reveal">
+          <div class="gallery-item" data-index="0" role="button" tabindex="0" aria-label="Ver foto 1">
+            <div class="gallery-img" style="--bg: #1a0a2e;">🍜</div>
+            <div class="gallery-overlay"><span>Cocina del Mundo</span></div>
+          </div>
+          <div class="gallery-item gallery-item--tall" data-index="1" role="button" tabindex="0" aria-label="Ver foto 2">
+            <div class="gallery-img" style="--bg: #2d1b00;">🔥</div>
+            <div class="gallery-overlay"><span>Show de Fuego</span></div>
+          </div>
+          <div class="gallery-item" data-index="2" role="button" tabindex="0" aria-label="Ver foto 3">
+            <div class="gallery-img" style="--bg: #0a1f1a;">🎸</div>
+            <div class="gallery-overlay"><span>Música en Vivo</span></div>
+          </div>
+          <div class="gallery-item gallery-item--wide" data-index="3" role="button" tabindex="0" aria-label="Ver foto 4">
+            <div class="gallery-img" style="--bg: #1f0a0a;">🍰</div>
+            <div class="gallery-overlay"><span>Zona de Postres</span></div>
+          </div>
+          <div class="gallery-item" data-index="4" role="button" tabindex="0" aria-label="Ver foto 5">
+            <div class="gallery-img" style="--bg: #0d0a2e;">🍹</div>
+            <div class="gallery-overlay"><span>Cócteles Artesanales</span></div>
+          </div>
+          <div class="gallery-item" data-index="5" role="button" tabindex="0" aria-label="Ver foto 6">
+            <div class="gallery-img" style="--bg: #1a1a0a;">🌮</div>
+            <div class="gallery-overlay"><span>Street Food</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox modal (controlado por JS) -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+      <button class="lightbox__close" id="lightbox-close" aria-label="Cerrar">✕</button>
+      <button class="lightbox__prev" id="lightbox-prev" aria-label="Anterior">‹</button>
+      <div class="lightbox__content" id="lightbox-content"></div>
+      <button class="lightbox__next" id="lightbox-next" aria-label="Siguiente">›</button>
+      <div class="lightbox__caption" id="lightbox-caption"></div>
+    </div>
+
+    <!-- ===========================
+         SPONSORS (extra)
+    ============================ -->
+    <section class="sponsors reveal">
+      <div class="container">
+        <p class="sponsors__label">Con el apoyo de</p>
+        <div class="sponsors__logos">
+          <span class="sponsor">🏆 Colombia Travel</span>
+          <span class="sponsor">🍽️ Corpocultura</span>
+          <span class="sponsor">🎵 MinCultura</span>
+          <span class="sponsor">🌿 ProColombia</span>
+          <span class="sponsor">🔥 Fogón Studio</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===========================
+       FOOTER
+  ============================ -->
+  <footer class="footer" id="contacto">
+    <div class="footer__inner container">
+      <!-- Col 1: Brand -->
+      <div class="footer__brand">
+        <p class="footer__logo">🌙 Sabores de la Noche</p>
+        <p class="footer__tagline">El festival gastronómico nocturno de Colombia.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">👤</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <!-- Col 2: Enlances -->
+      <div class="footer__col">
+        <h4>Enlances</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#fechas">Fechas</a></li>
+          <li><a href="#sobre">El Festival</a></li>
+          <li><a href="#zonas">Zonas</a></li>
+          <li><a href="#galeria">Galería</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Contacto -->
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li>📧 hola@saboresdelanoche.co</li>
+          <li>📞 +57 300 000 0000</li>
+          <li>📍 Colombia – 4 ciudades</li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Newsletter -->
+      <div class="footer__newsletter">
+        <h4>Newsletter</h4>
+        <p>Recibe novedades y preventas exclusivas.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Tu correo electrónico" id="newsletter-input" />
+          <button class="btn btn--primary" id="newsletter-btn">→</button>
+        </div>
+        <p class="newsletter-msg" id="newsletter-msg"></p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2025 Sabores de la Noche · Todos los derechos reservados.</p>
+        <p>Diseño y desarrollo: Festival Team</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón volver arriba -->
+  <button class="back-to-top" id="back-to-top" aria-label="Volver al inicio">↑</button>
+
+  <!-- JavaScript -->
+  <script src="css/main.js"></script>
+</body>
+</html>
