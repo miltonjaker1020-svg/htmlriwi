@@ -1,0 +1,209 @@
+/* ============================================================
+   MEGA LIBRERÍA CSS V4 - 30 FORMATOS
+   ============================================================ */
+
+:root {
+    --bg: #f8faff;
+    --primary: #4361ee;
+    --accent: #f72585;
+    --neu-light: #ffffff;
+    --neu-dark: #d1d9e6;
+    --text: #2b2d42;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--text);
+    padding-bottom: 100px;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+.mega-header {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+
+.category-title {
+    margin: 50px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary);
+    font-size: 1.5rem;
+}
+
+.mega-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* =========================================
+   I. TARJETAS (FORMATOS 1-8)
+   ========================================= */
+
+.f-card {
+    height: 150px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+    background: white;
+}
+
+/* 1. Glassmorphism */
+.f-glass {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* 2 y 3. Neumorfismo */
+.f-neu-flat { box-shadow: 8px 8px 16px var(--neu-dark), -8px -8px 16px var(--neu-light); }
+.f-neu-pressed { box-shadow: inset 8px 8px 16px var(--neu-dark), inset -8px -8px 16px var(--neu-light); }
+
+/* 4. Borde Gradiente */
+.f-gradient-border {
+    position: relative;
+    background: white;
+    background-clip: padding-box;
+    border: 4px solid transparent;
+}
+.f-gradient-border::before {
+    content: ''; position: absolute; top: -4px; bottom: -4px; left: -4px; right: -4px;
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    z-index: -1; border-radius: 15px;
+}
+
+/* 5. Glow Hover */
+.f-glow-hover:hover { box-shadow: 0 0 20px var(--primary); transform: translateY(-5px); }
+
+/* 6. Tilt */
+.f-tilt:hover { transform: perspective(500px) rotateX(10deg); }
+
+/* 7. Image Zoom Simple */
+.f-image-zoom { overflow: hidden; position: relative; }
+.img-sim { 
+    position: absolute; top:0; left:0; width:100%; height:100%; 
+    background: #ccc; z-index: -1; transition: 0.5s; 
+}
+.f-image-zoom:hover .img-sim { transform: scale(1.2); }
+
+/* 8. Minimal */
+.f-minimal { border: 2px dashed #ddd; background: transparent; }
+
+/* =========================================
+   II. BOTONES (FORMATOS 9-16)
+   ========================================= */
+
+.buttons-flex { display: flex; flex-wrap: wrap; gap: 15px; }
+.f-btn { 
+    padding: 12px 24px; border: none; border-radius: 8px; 
+    cursor: pointer; font-weight: 600; transition: 0.3s; 
+}
+
+/* 9. Ripple */
+.btn-1 { background: var(--primary); color: white; }
+.btn-1:active { transform: scale(0.95); }
+
+/* 10. Pulso */
+.btn-2 { background: #00cec9; color: white; animation: pulse-btn 2s infinite; }
+@keyframes pulse-btn { 0% { box-shadow: 0 0 0 0 rgba(0,206,201,0.7); } 70% { box-shadow: 0 0 0 15px rgba(0,206,201,0); } 100% { box-shadow: 0 0 0 0 rgba(0,206,201,0); } }
+
+/* 11. Retro */
+.btn-3 { background: #fdcb6e; border-bottom: 4px solid #e17055; }
+.btn-3:active { border-bottom: 0; transform: translateY(4px); }
+
+/* 12. Slide Color */
+.btn-4 { background: #333; color: white; position: relative; z-index: 1; overflow: hidden; }
+.btn-4::before { content:''; position: absolute; top:0; left:-100%; width:100%; height:100%; background: var(--accent); transition: 0.4s; z-index: -1; }
+.btn-4:hover::before { left: 0; }
+
+/* 13. Neon */
+.btn-5 { background: transparent; color: #a29bfe; border: 2px solid #a29bfe; }
+.btn-5:hover { background: #a29bfe; color: white; box-shadow: 0 0 15px #a29bfe; }
+
+/* 14. 3D Shadow */
+.btn-6 { background: white; box-shadow: 5px 5px 0px #2d3436; border: 1px solid #2d3436; }
+
+/* 15. Magnificar */
+.btn-7:hover { transform: scale(1.15); }
+
+/* 16. Ghost */
+.btn-8 { background: transparent; border: 1px solid #ddd; color: #777; }
+.btn-8:hover { border-color: #333; color: #333; }
+
+/* =========================================
+   III. INPUTS Y CONTROLES (FORMATOS 17-22)
+   ========================================= */
+
+.control-box { background: white; padding: 20px; border-radius: 10px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+
+/* 17. iOS Switch */
+.switch { position: relative; display: inline-block; width: 50px; height: 26px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
+.slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+input:checked + .slider { background-color: #4cd137; }
+input:checked + .slider:before { transform: translateX(24px); }
+
+/* 18. Line Input */
+.input-line { border: none; border-bottom: 2px solid #ddd; padding: 5px; transition: 0.3s; outline: none; }
+.input-line:focus { border-color: var(--primary); }
+
+/* 19. Glow Input */
+.input-glow { border: 1px solid #ddd; padding: 8px; border-radius: 5px; outline: none; }
+.input-glow:focus { box-shadow: 0 0 10px rgba(67, 97, 238, 0.5); border-color: var(--primary); }
+
+/* 20. Custom Checkbox */
+.custom-check { display: flex; align-items: center; cursor: pointer; }
+.custom-check input { display: none; }
+.custom-check span { width: 20px; height: 20px; border: 2px solid #ddd; margin-right: 10px; position: relative; }
+.custom-check input:checked + span { background: var(--primary); border-color: var(--primary); }
+
+/* =========================================
+   IV. TEXTO Y CARGAS (FORMATOS 23-30)
+   ========================================= */
+
+/* 23. Rainbow Text */
+.t-rainbow { background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); -webkit-background-clip: text; color: transparent; }
+
+/* 24. Outline Text */
+.t-outline { color: transparent; -webkit-text-stroke: 1px var(--text); }
+
+/* 25. 3D Text */
+.t-shadow { color: white; text-shadow: 1px 1px 0 #ccc, 2px 2px 0 #ccc, 3px 3px 0 #444; }
+
+/* 26. Underline anim */
+.t-underline { position: relative; cursor: pointer; }
+.t-underline::after { content:''; position: absolute; width: 0; height: 3px; bottom: -2px; left: 0; background: var(--accent); transition: 0.3s; }
+.t-underline:hover::after { width: 100%; }
+
+/* 27, 28, 29. Spinners */
+.loader-box { display: flex; justify-content: center; align-items: center; height: 60px; }
+.spin-1 { width: 30px; height: 30px; border: 4px solid #ddd; border-top-color: var(--primary); border-radius: 50%; animation: rot 1s linear infinite; }
+@keyframes rot { to { transform: rotate(360deg); } }
+
+.spin-2 { width: 30px; height: 30px; background: var(--accent); animation: sq-rot 1.2s infinite; }
+@keyframes sq-rot { 0% { transform: rotate(0); } 50% { transform: rotate(180deg); border-radius: 50%; } 100% { transform: rotate(360deg); } }
+
+.spin-3 { display: flex; gap: 5px; }
+.spin-3::before, .spin-3::after { content:''; width: 10px; height: 10px; background: var(--primary); border-radius: 50%; animation: bounce 0.6s infinite alternate; }
+.spin-3::after { animation-delay: 0.3s; }
+@keyframes bounce { to { transform: translateY(-15px); } }
+
+/* 30. Skeleton */
+.skeleton { width: 100%; height: 20px; background: #eee; position: relative; overflow: hidden; border-radius: 4px; }
+.skeleton::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; transform: translateX(-100%); background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent); animation: shimmer 1.5s infinite; }
+@keyframes shimmer { 100% { transform: translateX(100%); } }
+
+.mega-footer { text-align: center; padding: 40px; background: #eee; margin-top: 50px; }

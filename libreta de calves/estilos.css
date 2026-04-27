@@ -1,0 +1,169 @@
+/* =========================================
+   RESET Y ESTILOS GLOBALES
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Para que el padding no afecte el ancho total */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5; /* Color de fondo gris claro */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 10px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+    border-left: 5px solid #3498db;
+    padding-left: 10px;
+    color: #2c3e50;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Rejilla responsiva */
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+/* =========================================
+   ESTILOS DE TARJETAS (CARDS)
+   ========================================= */
+
+/* Estilo común para todas las tarjetas */
+.card {
+    padding: 20px;
+    border-radius: 15px;
+    background: white;
+    transition: all 0.3s ease; /* Transición suave para cualquier cambio */
+}
+
+/* 1. Tarjeta Básica */
+.card-basic {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave (x, y, desenfoque, color) */
+}
+
+/* 2. Tarjeta Elevada */
+.card-elevated {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.card-elevated:hover {
+    transform: translateY(-10px); /* Mueve la tarjeta 10px hacia arriba */
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2); /* Sombra más fuerte al elevarse */
+}
+
+/* 3. Tarjeta Glassmorphism */
+.card-glass {
+    background: rgba(255, 255, 255, 0.2); /* Fondo blanco con mucha transparencia */
+    backdrop-filter: blur(10px); /* El truco mágico: desenfoca lo que hay detrás */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+
+/* =========================================
+   EFECTO RIPPLE (CSS PURO)
+   ========================================= */
+
+.btn-ripple {
+    position: relative; /* Necesario para posicionar el efecto dentro */
+    overflow: hidden; /* Corta la onda cuando sale del botón */
+    background-color: #3498db;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-ripple::after {
+    content: ""; /* Crea un elemento invisible */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.4); /* Color de la onda */
+    border-radius: 50%; /* Forma circular */
+    transform: translate(-50%, -50%); /* Centra el círculo */
+    transition: width 0.6s ease, height 0.6s ease; /* Duración de la expansión */
+}
+
+.btn-ripple:hover::after {
+    width: 300px; /* Al pasar el ratón, el círculo crece */
+    height: 300px;
+    opacity: 0; /* Al final se desvanece */
+}
+
+/* =========================================
+   ANIMACIONES CSS (@keyframes)
+   ========================================= */
+
+.box {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e74c3c;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* 1. Pulso */
+.anim-pulse {
+    animation: pulso 2s infinite; /* Nombre, duración, repetición */
+}
+
+@keyframes pulso {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); } /* Agranda un poquito */
+    100% { transform: scale(1); }
+}
+
+/* 2. Aparecer desde abajo (Fade In Up) */
+.anim-fade-up {
+    animation: fadeUp 1.5s ease-out;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Empieza más abajo y transparente */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Termina en su sitio */
+    }
+}
+
+/* 3. Giro constante */
+.anim-spin {
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

@@ -1,0 +1,157 @@
+/* =========================================
+   CONFIGURACIÓN BÁSICA
+   ========================================= */
+
+:root {
+    --bg-color: #e0e5ec; /* Color base para neumorfismo */
+    --neu-shadow-dark: #a3b1c6;
+    --neu-shadow-light: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Arial', sans-serif;
+    color: #444;
+    padding: 20px;
+}
+
+.container { max-width: 900px; margin: 0 auto; }
+
+header {
+    text-align: center;
+    padding: 30px;
+    background: #222;
+    color: #fff;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+h2 { margin-bottom: 15px; color: #2d3436; }
+
+.desc { margin-bottom: 20px; font-style: italic; color: #636e72; }
+
+/* =========================================
+   1. NEUMORFISMO (El arte de las sombras)
+   ========================================= */
+
+/* Tarjeta hacia afuera (Relieve) */
+.neu-card {
+    background: var(--bg-color);
+    padding: 40px;
+    border-radius: 30px;
+    /* Sombra oscura abajo-derecha, Sombra clara arriba-izquierda */
+    box-shadow: 9px 9px 16px var(--neu-shadow-dark), 
+                -9px -9px 16px var(--neu-shadow-light);
+    display: flex;
+    justify-content: center;
+}
+
+/* Botón Neumórfico */
+.neu-button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: var(--bg-color);
+    box-shadow: 4px 4px 8px var(--neu-shadow-dark), 
+                -4px -4px 8px var(--neu-shadow-light);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.neu-button:active {
+    /* Al hacer clic, invertimos las sombras para que parezca que se hunde */
+    box-shadow: inset 4px 4px 8px var(--neu-shadow-dark), 
+                inset -4px -4px 8px var(--neu-shadow-light);
+}
+
+/* Efecto hundido (Inner Shadow) */
+.neu-card-inner {
+    background: var(--bg-color);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: inset 9px 9px 16px var(--neu-shadow-dark), 
+                inset -9px -9px 16px var(--neu-shadow-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================
+   2. GRADIENTES Y BORDES
+   ========================================= */
+
+.card-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.card-border-gradient {
+    background: #222;
+    color: #00ffcc;
+    padding: 30px;
+    border-radius: 20px;
+    border: 3px solid transparent;
+    /* Truco para borde neón */
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+    transition: 0.3s;
+}
+
+.card-border-gradient:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+    transform: scale(1.02);
+}
+
+/* =========================================
+   3. ANIMACIONES DE INTERACCIÓN
+   ========================================= */
+
+/* SPINNER (Cargando) */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0,0,0,0.1);
+    border-top: 5px solid #3498db; /* Color de la punta que gira */
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ERROR SHAKE (Sacudida) */
+.btn-error {
+    background: #ff7675;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-error:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+
+.loader-container, .shake-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

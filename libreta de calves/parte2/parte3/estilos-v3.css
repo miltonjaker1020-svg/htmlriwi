@@ -1,0 +1,299 @@
+/* ============================================================
+   ESTILOS MAESTROS V3 - BIBLIOTECA COMPLETA
+   ============================================================ */
+
+/* VARIABLES: Son como cajas donde guardamos colores para usarlos siempre igual */
+:root {
+    --primary: #4834d4;
+    --secondary: #686de0;
+    --dark: #130f40;
+    --light: #f9f9f9;
+    --success: #6ab04c;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #f0f2f5;
+    color: var(--dark);
+    overflow-x: hidden; /* Evita que aparezca barra horizontal */
+}
+
+/* FONDO ANIMADO */
+.bg-animated {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, #f3f3f3, #e2e2e2, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* NAVBAR MODERNA */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; }
+.logo span { color: var(--primary); }
+
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin-left: 30px; }
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Efecto de línea que sale del centro en el menú */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* TITULOS DE SECCIÓN */
+.section-title {
+    margin: 60px 0 30px;
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* 1. BENTO GRID (Distribución asimétrica) */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    gap: 15px;
+}
+
+.bento-item {
+    border-radius: 20px;
+    padding: 25px;
+    color: white;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.bento-item:hover { transform: scale(0.98); opacity: 0.9; }
+
+.bento-item.tall { grid-row: span 2; } /* Ocupa 2 filas */
+.bento-item.wide { grid-column: span 2; } /* Ocupa 2 columnas */
+
+/* 2. TARJETAS DE PRODUCTO */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: var(--transition);
+    border: 1px solid #eee;
+}
+
+.product-card:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--primary);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    z-index: 10;
+}
+
+.product-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    background: #dfe6e9;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .placeholder-img { transform: scale(1.1); }
+
+.product-info { padding: 25px; }
+.category { color: #aaa; font-size: 0.8rem; text-transform: uppercase; }
+.price { font-size: 1.5rem; font-weight: 700; margin: 15px 0; color: var(--primary); }
+
+.btn-buy {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: var(--dark);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-buy:hover { background: var(--primary); }
+
+/* 3. BOTONES CON EFECTOS */
+.demo-flex { display: flex; gap: 20px; flex-wrap: wrap; }
+
+/* Botón con brillo cruzado */
+.btn-shine {
+    position: relative;
+    padding: 15px 30px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn-shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+
+.btn-shine:hover::before {
+    left: 150%;
+}
+
+/* Botón Neón Glow */
+.btn-glow {
+    padding: 15px 30px;
+    background: transparent;
+    color: #00d2ff;
+    border: 2px solid #00d2ff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn-glow:hover {
+    background: #00d2ff;
+    color: white;
+    box-shadow: 0 0 20px #00d2ff;
+}
+
+/* 4. FORMULARIO FLOATING LABELS */
+.form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    outline: none;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* Si el input está enfocado o tiene texto, la etiqueta sube */
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -20px;
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.input-group input:focus {
+    border-bottom: 2px solid var(--primary);
+}
+
+.btn-submit {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.final-footer {
+    text-align: center;
+    padding: 60px;
+    color: #999;
+    font-size: 0.9rem;
+}
